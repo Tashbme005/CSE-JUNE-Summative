@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Landing Page{% endblock %}
+
+{% block content %}
+    <style>
+        body {
+            background: fixed;
+            background-color: rgb(39, 234, 39);
+        }
+    </style>
+    <div style="--bs-body-color: pale green">
+        <div class="content_center" justify="center">
+            <img src="images/fca_log.jpg" alt="logo"> 
+            <p>Refuge Support Program</p>
+            <button type="button" >
+                <a href="{% url 'registration_form' %}" class="btn btn-primary">
+                Register
+            </button> 
+    
+        </div>
+    </div>
+{% endblock %}

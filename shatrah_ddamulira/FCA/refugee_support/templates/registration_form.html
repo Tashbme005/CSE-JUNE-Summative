@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Registration Form{% endblock %}
+
+{% block content %}
+    <div class="row justify-content-center">
+        <div class="col-md-3" >
+            <img src="fca-logo.jpg" alt="Logo">
+            <p><strong>Refugee Support Program </strong></p>
+        </div>
+        <div class="col-md-7">
+            <div class="page-card p-4">
+                <h1> <strong>BENEFICIARY REGISTRATION FORM </strong> </h1>
+
+                <form action="/registration_form.html" method="post" >
+                    {% csrf_token %}
+                    <div>
+                        <div>
+                            <label for="first_name"><strong>First Name</strong></label>
+                            <input type="text" placeholder="Enter your First name">
+                        </div>
+                        <div>
+                            <label for="last_name"><strong>Last Name</strong></label>
+                            <input type="text" placeholder="Enter your Last name">
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <label for="date_of_birth"><strong>Date of Birth</strong></label>
+                            <input type="date" placeholder="YYYY / MM / DD"></div>
+                        <div>
+                            <label for="place_of_birth"><strong>Place of Birth</strong></label>
+                            <input type="text" placeholder="Enter your place of residence"></div>
+                        <div>
+                    </div>
+                    <div>
+                        <label for="gender"><strong>Gender</strong></label>
+                        <div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio">
+                                <label class="form-check-label" for="radioDefault1">
+                                    <strong>Male</strong>
+                                </label>
+                                </div>
+                                <div class="form-check">
+                                <input class="form-check-input" type="radio" name="radioDefault" id="radioDefault2" checked>
+                                <label class="form-check-label" for="radioDefault2">
+                                    <strong>Female</strong>
+                                </label>
+                            </div>
+                        </div>  
+                    </div>
+                    <div>
+                        <div>
+                            <label for="nationality"><strong>Nationality</strong></label>
+                            <div>
+                                <div class="dropdown">                                   
+                                        {{ form.nationality }}
+                                </div>
+                            </div>    
+                        </div>
+                        <div>
+                            <label for="marital_status"><strong>Marital status</strong></label>
+                            <input type="text" placeholder="--Select Marital status">
+                        </div>
+                    </div>
+                    <div>
+                        <label for="settle_camp"><strong>Settlement camp</strong></label>
+                        <input type="text" placeholder="--Select settlement camp">
+                    </div>
+                    <div>
+                        <label for="date_of_joining_settlement_camp"><strong>Date of joining Settlement camp</strong></label>
+                        <input type="date" placeholder="YYYY / MM / DD"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div>
+    <button type="submit">Register</button>
+    </div>
+    </div>
+{% endblock %}
